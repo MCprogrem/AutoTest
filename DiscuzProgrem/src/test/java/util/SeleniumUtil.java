@@ -2,17 +2,17 @@ package util;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Properties;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by lenovo on 2018/5/7.
@@ -25,12 +25,12 @@ public class SeleniumUtil {
 
     public WebDriver getDriver(String driverType) throws InterruptedException {
         if (driverType.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "E:\\chrome&driver\\chrome&driver\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 
             driver = new ChromeDriver();
             logger.info("启动chrome浏览器");
         } else if (driverType.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "E:\\Firefox\\geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", "./geckodriver.exe");
             driver = new FirefoxDriver();
             logger.info("启动FireFox浏览器");
         } else {
@@ -126,7 +126,8 @@ public class SeleniumUtil {
     }
     //校验文本是否与预期一致
 
-    public void assertForText(String expected, String actual) {
+    public void assertForText(String expected, By by) {
+        String actual=findElement(by).getText();
         try {
             Assert.assertEquals(expected, actual);
         } catch (AssertionError e) {
@@ -169,17 +170,39 @@ public class SeleniumUtil {
         //        打开新窗口后获取所有窗口的句柄，
         Set<String> all_handles = driver.getWindowHandles();
         //        通过循环判断是不是当前的窗口句柄，
-        Iterator<String> it = all_handles.iterator();
-        while (it.hasNext()) {
-            if (it.next() == current_handle) {
-                continue;
-            }
+
+//        Iterator<String> it = all_handles.iterator();
+//        while (it.hasNext()) {
+//            if (it.next() == current_handle) {
+//                continue;
+//            }
 //          跳入新窗口
-            //  WebDriver new_driver = chrome.switchTo().window(it.next());
-            driver.switchTo().window(it.next());
+        //  WebDriver new_driver = chrome.switchTo().window(it.next());
+        List<String> list =new ArrayList<String>(all_handles);
+        driver.switchTo().window(list.get(list.size()-1));
+       logger.info("成功切换到新窗口");
 
-
-        }
+//    }
     }
+    /**设置显示等待元素*/
+    public void waitForElementLoad(final By by, int timeOut){
+        logger.info("开始查找元素："+by);
+        try{
+            WebDriverWait wait = new WebDriverWait(driver, timeOut, 1000);
+            wait.until(new ExpectedCondition<Boolean>() {
+
+                public Boolean apply(WebDriver driver) {
+                    WebElement element = driver.findElement(by);
+                    return element.isDisplayed();
+                }
+            });
+        } catch (TimeoutException e){
+            logger.error("超时!! " + timeOut + " 秒之后还没找到元素: [" + by + "]");
+            Assert.fail("超时!! " + timeOut + " 秒之后还没找到元素 :[" + by + "]");
+        }
+        logger.info("找到了元素: [" + by + "]");
+    }
+
+
 
 }

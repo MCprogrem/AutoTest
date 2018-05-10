@@ -1,6 +1,7 @@
 package pagehelper;
 
 import org.apache.log4j.Logger;
+import page.PageDefaultBlock;
 import page.PageDelete;
 import util.SeleniumUtil;
 
@@ -8,6 +9,7 @@ import util.SeleniumUtil;
  * Created by lenovo on 2018/5/8.
  */
 public class HelperDeletePage {
+
     public static Logger logger=Logger.getLogger(HelperLoginPage.class);
 
     //找管理面板
@@ -16,10 +18,13 @@ public class HelperDeletePage {
     }
     //找帖子
     public  static  void clickContent(SeleniumUtil util){
+
+        util.waitForElementLoad(PageDelete.DELETE_BUTTON_CONTENT,10);
         util.click(PageDelete.DELETE_BUTTON_CONTENT);
     }
     //找删除按钮
     public  static  void  clickDelete(SeleniumUtil util){
+
         util.click(PageDelete.DELETE_BUTTON_DELETE);
     }
     //删除原因选择
@@ -32,6 +37,8 @@ public class HelperDeletePage {
     }
     //确定按钮
     public  static  void clickCeratin(SeleniumUtil util){
-     util.click(PageDelete.DELETE_BUTTON_CERTAIN);
+
+        util.waitForElementLoad(PageDelete.DELETE_BUTTON_CERTAIN,10);
+        util.click(PageDelete.DELETE_BUTTON_CERTAIN);
     }
 }

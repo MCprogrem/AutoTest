@@ -17,7 +17,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
-            <version>3.3.1</version>
+            <version>3.0.1</version>
         </dependency>
 
         <dependency>
@@ -30,6 +30,11 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.9.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>2.5</version>
         </dependency>
 
         <dependency>
@@ -61,7 +66,7 @@
                   <suiteXmlFiles>
                       <suiteXmlFile>./testng.xml</suiteXmlFile>
                   </suiteXmlFiles>
-                  <reportsDirectory>./result/report</reportsDirectory>
+                  <!--<reportsDirectory>./result/report</reportsDirectory>-->
               </configuration>
           </plugin>
   </plugins>

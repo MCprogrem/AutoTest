@@ -10,6 +10,7 @@ import util.SeleniumUtil;
 public class HelperDefauleBlockPage {
     public static Logger logger=Logger.getLogger(HelperDefauleBlockPage.class);
     public  static void clickDefaultBlock(SeleniumUtil util){
-      util.click(PageDefaultBlock.POST_LINK_DEFAULTBLOCK);
+        util.waitForElementLoad(PageDefaultBlock.POST_LINK_DEFAULTBLOCK,10);
+        util.click(PageDefaultBlock.POST_LINK_DEFAULTBLOCK);
     }
 }

@@ -9,7 +9,7 @@ public class PageReplies {
     //找帖子
     public  static  final By REPLIES_link_CARD=By.xpath("//*[@id=\"normalthread_2\"]/tr/th/a[2]");
     //回复
-    public  static  final By REPLIES_LIIK_REPLY=By.linkText("回复");
+    public  static  final By REPLIES_LIIK_REPLY=By.xpath("//*[@id=\"post_replytmp\"]");
     //输入回复
     public  static final By REPLIES_TEXT_CONTENT=By.name("message");
     //点击回复

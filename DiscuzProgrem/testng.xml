@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <suite name="DiscuzTest">
+         <test name="Test">
+             <classes>
+                <class name="testcase.TestClass1"></class>
+                 <class name="testcase.TestClass2"></class>
+                 <class name="testcase.TestClass3"></class>
+                 <class name="testcase.TestVote"></class>
+
+             </classes>
+
+         </test>
+
+
+</suite>

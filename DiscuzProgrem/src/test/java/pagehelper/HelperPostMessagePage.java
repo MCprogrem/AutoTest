@@ -12,6 +12,7 @@ public class HelperPostMessagePage {
     public static Logger logger=Logger.getLogger(HelperPostMessagePage.class);
 //发表帖子
     public  static  void clickMessage(SeleniumUtil util){
+        util.waitForElementLoad(PagePostMessage.POST_LINK_MESSAGE,10);
         util.click(PagePostMessage.POST_LINK_MESSAGE);
     }
     //输入标题
@@ -21,19 +22,24 @@ public class HelperPostMessagePage {
     //输入内容
     public  static  void inputContent(SeleniumUtil util,String texts){
         util.iframe("e_iframe");
+        util.waitForElementLoad(PagePostMessage.POST_TEXT_CONTENT,10);
         util.sendKeys(PagePostMessage.POST_TEXT_CONTENT,texts);
 
     }
     //发布按钮
     public static void clickPost(SeleniumUtil util){
+
         util.iframe();
+        util.waitForElementLoad(PagePostMessage.POST_BUTTON_POST,10);
        util.click(PagePostMessage.POST_BUTTON_POST);
     }
     //-------------------------------------------快速发布
     public  static  void  inputSend(SeleniumUtil util,String content){
+        util.waitForElementLoad(PagePostMessage.POST_TEXT_SEND,10);
         util.sendKeys(PagePostMessage.POST_TEXT_SEND,content);
     }
     public  static  void  inputSendContent(SeleniumUtil util,String contents){
+        util.waitForElementLoad(PagePostMessage.POST_TEXT_SENDCONTENT,10);
         util.sendKeys(PagePostMessage.POST_TEXT_SENDCONTENT,contents);
     }
 }

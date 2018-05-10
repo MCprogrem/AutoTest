@@ -1,5 +1,6 @@
 package testcase;
 
+import org.testng.annotations.AfterMethod;
 import util.LogConfiguration;
 import util.ReadBrowserProperties;
 import util.SeleniumUtil;
@@ -29,6 +30,9 @@ public class BasicTestCase {
         driver.manage().window().maximize();
         util.url("http://127.0.0.1:8088/Discuz_X3.2_SC_GBK/upload/forum.php");
     }
-
+//  @AfterMethod
+//    public  void tearDown(){
+//      driver.quit();
+//  }
 
 }

@@ -23,8 +23,9 @@ public class PageNewBlock {
     //提交
     public  static  final  By BLOCK_BUTTON_SUBMIT2=By.id("submit_editsubmit");
     //管理员退出
-    public static  final By Block_LINK_QUIT=By.linkText("//*[@id=\"frameuinfo\"]/p[1]/a");
+    public static  final By Block_LINK_QUIT=By.xpath("//*[@id=\"frameuinfo\"]/p[1]/a");
     //打开新的版块
-
+    public  static  final By BLOCK_NEW_PAGE=By.xpath("//td/h2/a");
+    //td/h2/a
 
 }

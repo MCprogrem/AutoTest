@@ -1,10 +1,7 @@
 package testcase;
 
 import org.testng.annotations.Test;
-import pagehelper.HelperDefauleBlockPage;
-import pagehelper.HelperLoginPage;
-import pagehelper.HelperLogoutPage;
-import pagehelper.HelperPostMessagePage;
+import pagehelper.*;
 
 /**
  * Created by lenovo on 2018/5/8.
@@ -16,10 +13,9 @@ public class TestClass1 extends  BasicTestCase {
     public  void Login() throws InterruptedException {
         //输入用户名、密码并登录
         HelperLoginPage.Login(util,"test","testtest");
-        Thread.sleep(2000);
         //点击并切换到默认板块
-        HelperDefauleBlockPage.clickDefaultBlock(util);
         Thread.sleep(2000);
+        HelperDefauleBlockPage.clickDefaultBlock(util);
 //        //点击发帖
 //        HelperPostMessagePage.clickMessage(util);
 //        Thread.sleep(2000);
@@ -36,15 +32,15 @@ public class TestClass1 extends  BasicTestCase {
         //输入标题
         HelperPostMessagePage.inputSend(util,"山海经");
         //输入内容
+       Thread.sleep(2000);
         HelperPostMessagePage.inputSendContent(util,"精卫填海《山海经·北次三经》：再向北走二百里，有座山叫发鸠山，它的上面（有）很多柘树。在它（上面）有（一种）鸟");
        //发表
-        Thread.sleep(2000);
+       Thread.sleep(2000);
         HelperPostMessagePage.clickPost(util);
+        HelperRepliesPage.inputContents(util,"农夫山泉有点甜");
+        HelperRepliesPage.clickBtn(util);
       //退出按钮
-        Thread.sleep(2000);
         HelperLogoutPage.clickLogout(util);
-//        //普通用户登录
-//        HelperLoginPage.Login(util,"test","testtest");
 
     }
 

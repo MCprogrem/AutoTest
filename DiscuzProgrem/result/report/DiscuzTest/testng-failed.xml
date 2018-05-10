@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [DiscuzTest]">
+  <test name="Test">
+    <classes>
+      <class name="testcase.TestClass1"/>
+      <class name="testcase.TestClass2"/>
+      <class name="testcase.TestClass3"/>
+      <class name="testcase.TestVote"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <classes>
+      <class name="testcase.TestClass1">
+        <methods>
+          <include name="Login"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcase.TestClass1 -->
+      <class name="testcase.TestVote">
+        <methods>
+          <include name="vote"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcase.TestVote -->
+      <class name="testcase.TestClass3">
+        <methods>
+          <include name="setUp"/>
+          <include name="userSearch"/>
+        </methods>
+      </class> <!-- testcase.TestClass3 -->
+      <class name="testcase.TestClass2">
+        <methods>
+          <include name="userAction"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcase.TestClass2 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [DiscuzTest] -->

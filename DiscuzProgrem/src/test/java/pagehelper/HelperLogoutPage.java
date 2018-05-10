@@ -12,6 +12,7 @@ public class HelperLogoutPage {
 
     //用户登出
     public  static  void  clickLogout(SeleniumUtil util){
+        util.waitForElementLoad(PageLogout.LOGOUT_LINK_QUIT,10);
         util.click(PageLogout.LOGOUT_LINK_QUIT);
     }
 

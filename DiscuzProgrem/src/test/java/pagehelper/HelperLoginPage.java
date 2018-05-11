@@ -39,11 +39,11 @@ public class HelperLoginPage {
    }
    //重构一个登录方法
     public  static  void Login(SeleniumUtil util ,String username,String password){
-        util.waitForElementLoad(PageLogin.LOGIN_TEXT_USERNAME,5);
+        util.waitForElementLoad(PageLogin.LOGIN_TEXT_USERNAME,15);
          inputUsername(util,username);
-        util.waitForElementLoad(PageLogin.LOGIN_TEXT_PASSWORD,5);
+        util.waitForElementLoad(PageLogin.LOGIN_TEXT_PASSWORD,15);
          inputPassword(util,password);
-        util.waitForElementLoad(PageLogin.LOGIN_BUTTON_LOGIN,5);
+        util.waitForElementLoad(PageLogin.LOGIN_BUTTON_LOGIN,15);
          clickLogin(util);
     }
 }

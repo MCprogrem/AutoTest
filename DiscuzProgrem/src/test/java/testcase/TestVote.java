@@ -20,6 +20,7 @@ public class TestVote extends  BasicTestCase {
         HelperPostMessagePage.clickMessage(util);
         HelperVotePage.ckickvote(util);
         //输入投票选项
+        Thread.sleep(2000);
         HelperVotePage.inputVote(util, "城市好还是农村好", "城市好", "农村好", "都好");
         //点击提交
         HelperVotePage.submit(util);

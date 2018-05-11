@@ -13,6 +13,7 @@ public class TestClass2 extends BasicTestCase {
         //管理员输入用户名、密码并登录
         HelperLoginPage.Login(util, "admin", "password");
         //进入 默认板块
+        Thread.sleep(2000);
         HelperDefauleBlockPage.clickDefaultBlock(util);
         //选择帖子
         HelperDeletePage.clickContent(util);

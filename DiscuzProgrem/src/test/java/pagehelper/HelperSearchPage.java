@@ -13,22 +13,20 @@ public class HelperSearchPage {
     public static Logger logger=Logger.getLogger(HelperLoginPage.class);
     //搜索框输入搜索内容
     public  static  void  inputContent(SeleniumUtil util,String text){
-        util.waitForElementLoad(PageSearch.SEARCH_TEXT_CONTENT,20);
+        util.waitForElementLoad(PageSearch.SEARCH_TEXT_CONTENT,10);
         util.sendKeys(PageSearch.SEARCH_TEXT_CONTENT,text);
     }
    //搜索按钮
     public  static  void clickSearchbtn(SeleniumUtil util){
-        util.waitForElementLoad(PageSearch.SEARCH_BUTTON_SEARCH,15);
+        util.waitForElementLoad(PageSearch.SEARCH_BUTTON_SEARCH,10);
         util.click(PageSearch.SEARCH_BUTTON_SEARCH);
     }
     //搜索存在的帖子并进入
 
     public  static  void  clickLink(SeleniumUtil util) throws InterruptedException {
-        Thread.sleep(2000);
         util.handle();
-     util.waitForElementLoad(PageSearch.SEARCH_CONTENT_HAO,15);
+      //  util.waitForElementLoad(PageSearch.SEARCH_CONTENT_HAO,15);
         util.click(PageSearch.SEARCH_CONTENT_HAO);
-        Thread.sleep(2000);
         util.handle();
     }
     //验证帖子标题和期望的一致

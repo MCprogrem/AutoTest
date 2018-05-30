@@ -10,7 +10,7 @@ import util.SeleniumUtil;
  * Created by lenovo on 2018/5/9.
  */
 public class HelperSearchPage {
-    public static Logger logger=Logger.getLogger(HelperLoginPage.class);
+    public static Logger logger=Logger.getLogger(HelperSearchPage .class);
     //搜索框输入搜索内容
     public  static  void  inputContent(SeleniumUtil util,String text){
         util.waitForElementLoad(PageSearch.SEARCH_TEXT_CONTENT,10);
@@ -25,7 +25,7 @@ public class HelperSearchPage {
 
     public  static  void  clickLink(SeleniumUtil util) throws InterruptedException {
         util.handle();
-      //  util.waitForElementLoad(PageSearch.SEARCH_CONTENT_HAO,15);
+        util.waitForElementLoad(PageSearch.SEARCH_CONTENT_HAO,15);
         util.click(PageSearch.SEARCH_CONTENT_HAO);
         util.handle();
     }

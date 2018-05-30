@@ -11,11 +11,12 @@ import pagehelper.HelperVotePage;
  */
 public class TestVote extends  BasicTestCase {
     @Test
-     public  void  vote() throws InterruptedException {
+     public  void  vote()throws InterruptedException {
         //普通用户登录
-        HelperLoginPage.Login(util, "test", "testtest");
+        HelperLoginPage.Login(util,"test","testtest");
         //选择版块
-        HelperNewBlockPage.openNewBlock(util, 1);
+        Thread.sleep(2000);
+        HelperNewBlockPage.openNewBlock(util,2);
         //发表投票
         HelperPostMessagePage.clickMessage(util);
         HelperVotePage.ckickvote(util);

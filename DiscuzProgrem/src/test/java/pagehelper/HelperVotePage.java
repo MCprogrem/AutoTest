@@ -12,7 +12,7 @@ import java.util.List;
  * Created by lenovo on 2018/5/9.
  */
 public class HelperVotePage {
-    public static Logger logger=Logger.getLogger(HelperLoginPage.class);
+    public static Logger logger=Logger.getLogger( HelperVotePage.class);
     //找到发表投票页面
     public  static  void  ckickvote(SeleniumUtil util){
         util.click(PageVote.VOTE_LINK_PUB);

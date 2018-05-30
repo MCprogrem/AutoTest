@@ -1,0 +1,4 @@
+[2018-05-30 15:36:02] [INFO] 启动chrome浏览器
+[2018-05-30 15:36:08] [INFO] 打开网址http://127.0.0.1:8088/Discuz_X3.2_SC_GBK/upload/forum.php
+[2018-05-30 15:36:08] [INFO] 开始查找元素：By.id: ls_username
+[2018-05-30 15:36:24] [ERROR] 超时!! 15 秒之后还没找到元素: [By.id: ls_username]

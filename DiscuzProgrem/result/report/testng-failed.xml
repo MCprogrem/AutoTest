@@ -13,26 +13,27 @@
     <classes>
       <class name="testcase.TestClass1">
         <methods>
-          <include name="Login"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- testcase.TestClass1 -->
-      <class name="testcase.TestVote">
-        <methods>
-          <include name="vote"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- testcase.TestVote -->
       <class name="testcase.TestClass3">
         <methods>
           <include name="setUp"/>
-          <include name="userSearch"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- testcase.TestClass3 -->
+      <class name="testcase.TestVote">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testcase.TestVote -->
       <class name="testcase.TestClass2">
         <methods>
           <include name="userAction"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- testcase.TestClass2 -->
     </classes>

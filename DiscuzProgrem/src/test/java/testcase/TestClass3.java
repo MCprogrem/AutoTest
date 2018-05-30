@@ -19,6 +19,7 @@ public class TestClass3 extends  BasicTestCase {
          //点击搜索按纽
          HelperSearchPage.clickSearchbtn(util);
          //跳转到帖子具体内容的按钮
+         Thread.sleep(2000);
          HelperSearchPage.clickLink(util);
          HelperSearchPage.clickVerify(util,"山海经");
          HelperLogoutPage.clickLogout(util);

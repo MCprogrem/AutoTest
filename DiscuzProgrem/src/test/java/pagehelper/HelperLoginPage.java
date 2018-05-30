@@ -15,6 +15,7 @@ public class HelperLoginPage {
 
   //输入用户名
    public  static  void inputUsername(SeleniumUtil util,String username){
+       util.waitForElementLoad(PageLogin.LOGIN_TEXT_USERNAME,10);
       util.sendKeys(PageLogin.LOGIN_TEXT_USERNAME,username);
    }
    //输入密码
@@ -39,11 +40,11 @@ public class HelperLoginPage {
    }
    //重构一个登录方法
     public  static  void Login(SeleniumUtil util ,String username,String password){
-        util.waitForElementLoad(PageLogin.LOGIN_TEXT_USERNAME,15);
+
          inputUsername(util,username);
-        util.waitForElementLoad(PageLogin.LOGIN_TEXT_PASSWORD,15);
+         util.waitForElementLoad(PageLogin.LOGIN_TEXT_PASSWORD,15);
          inputPassword(util,password);
-        util.waitForElementLoad(PageLogin.LOGIN_BUTTON_LOGIN,15);
+         util.waitForElementLoad(PageLogin.LOGIN_BUTTON_LOGIN,15);
          clickLogin(util);
     }
 }

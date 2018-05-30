@@ -24,8 +24,8 @@ public class SeleniumUtil {
     //识别驱动
 
     public WebDriver getDriver(String driverType) throws InterruptedException {
-        if (driverType.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
+        if (driverType.equalsIgnoreCase("Chrome")) {
+            System.setProperty("webdriver.chrome.driver", "./tools/chromedriver.exe");
 
             driver = new ChromeDriver();
             logger.info("启动chrome浏览器");
@@ -67,13 +67,22 @@ public class SeleniumUtil {
     }
 
     //输入内容
-    public void sendKeys(By by, String text) {
+//    public void sendKeys(By by,String text) {
+//        WebElement webElement = findElement(by);
+//        webElement.sendKeys(text);
+//        logger.info("输入成功");
 
-        WebElement webElement = findElement(by);
-        webElement.sendKeys(text);
-        logger.info("输入成功");
+    public void sendKeys(By by,String text) {
+        WebElement element = findElement(by);
+        element.clear();
+        try {
+            element.sendKeys(text);
+//            logger.info("在元素"+getLocationByElement(element,">")+"成功输入内容:"+text);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            logger.error("输入内容失败");
+        }
     }
-
     //点击
     public void click(By by) {
         try {
@@ -104,7 +113,7 @@ public class SeleniumUtil {
     //校验元素是否存在
     public boolean isExist(By by) {
         try {
-            driver.findElements(by);
+            driver.findElement(by);
             return true;
         } catch (NoSuchElementException e) {
             e.printStackTrace();
@@ -127,7 +136,7 @@ public class SeleniumUtil {
     //校验文本是否与预期一致
 
     public void assertForText(String expected, By by) {
-        String actual=findElement(by).getText();
+            String actual=findElement(by).getText();
         try {
             Assert.assertEquals(expected, actual);
         } catch (AssertionError e) {

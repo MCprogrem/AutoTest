@@ -10,7 +10,7 @@ import util.SeleniumUtil;
  */
 public class HelperDeletePage {
 
-    public static Logger logger=Logger.getLogger(HelperLoginPage.class);
+    public static Logger logger=Logger.getLogger( HelperDeletePage.class);
 
     //找管理面板
     public static  void  clickManage(SeleniumUtil util){

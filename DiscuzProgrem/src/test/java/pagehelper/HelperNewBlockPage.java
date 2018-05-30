@@ -11,7 +11,7 @@ import java.util.List;
  * Created by lenovo on 2018/5/8.
  */
 public class HelperNewBlockPage {
-    public static Logger logger=Logger.getLogger(HelperLoginPage.class);
+    public static Logger logger=Logger.getLogger( HelperNewBlockPage.class);
 
     //切换到管理中心
     public  static  void  clickManagement(SeleniumUtil util){
@@ -65,7 +65,7 @@ public class HelperNewBlockPage {
     //打开新的版块
    public static  void  openNewBlock(SeleniumUtil util,int i){
        util.waitForElementLoad(PageNewBlock.BLOCK_NEW_PAGE,15);
-      List<WebElement> list = util.findElements(PageNewBlock.BLOCK_NEW_PAGE);
+       List<WebElement> list = util.findElements(PageNewBlock.BLOCK_NEW_PAGE);
        list.get(i).click();
 
    }
